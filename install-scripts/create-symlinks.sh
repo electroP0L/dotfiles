@@ -27,8 +27,3 @@ done
 #==============
 ln -sf $dotfiles_dir/bash/.bashrc ~/.bashrc
 ln -sf $dotfiles_dir/zsh/.zshrc ~/.zshrc
-
-#==============
-# Set zsh as the default shell
-#==============
-sudo chsh -s $(which zsh)
