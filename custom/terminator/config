@@ -1,0 +1,27 @@
+[global_config]
+  title_hide_sizetext = True
+  title_transmit_bg_color = "#1a5fb4"
+  title_receive_bg_color = "#3584e4"
+  title_inactive_bg_color = "#99c1f1"
+  inactive_color_offset = 0.7555555555555555
+  suppress_multiple_term_dialog = True
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+  [[custom]]
+    background_color = "#251f30"
+    cursor_color = "#cac2db"
+    foreground_color = "#ece9f3"
+    palette = "#3d354e:#e4978a:#79c289:#c7ab60:#99ace5:#d694d0:#64becd:#cac2db:#706289:#edb4aa:#90d89f:#dcc27a:#b4c3ed:#e2b2dd:#81d3e2:#f7f6fa"
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = custom
+[plugins]

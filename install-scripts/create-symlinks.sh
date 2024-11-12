@@ -15,7 +15,7 @@ dotfiles_dir=~/dotfiles
 #==============
 # Rename existing dot files and folders (append .old)
 #==============
-for name in ~/.bashrc ~/.zshrc; do
+for name in ~/.bashrc ~/.zshrc ~/.tmux.conf; do
     if [ -e "$name" ]; then
         mv "$name" "$name.old" 2>/dev/null
     fi
@@ -27,3 +27,4 @@ done
 #==============
 ln -sf $dotfiles_dir/bash/.bashrc ~/.bashrc
 ln -sf $dotfiles_dir/zsh/.zshrc ~/.zshrc
+ln -sf $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
