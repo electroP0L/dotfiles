@@ -99,6 +99,7 @@ set mouse=a
 
 " }}}
 
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
@@ -107,6 +108,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
 
     Plug 'dense-analysis/ale'
+
+    Plug 'tpope/vim-fugitive'
 
 
 call plug#end()
