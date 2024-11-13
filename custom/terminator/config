@@ -15,6 +15,16 @@
     cursor_color = "#cac2db"
     foreground_color = "#ece9f3"
     palette = "#3d354e:#e4978a:#79c289:#c7ab60:#99ace5:#d694d0:#64becd:#cac2db:#706289:#edb4aa:#90d89f:#dcc27a:#b4c3ed:#e2b2dd:#81d3e2:#f7f6fa"
+  [[bright]]
+    background_color = "#251f30"
+    cursor_color = "#cac2db"
+    foreground_color = "#ece9f3"
+    palette = "#3d354e:#e4978a:#79c289:#c7ab60:#99ace5:#d694d0:#64becd:#cac2db:#706289:#edb4aa:#90d89f:#dcc27a:#b4c3ed:#e2b2dd:#81d3e2:#f7f6fa"
+  [[regular]]
+    background_color = "#261d35"
+    cursor_color = "#cbc0e2"
+    foreground_color = "#ede9f5"
+    palette = "#3f3255:#f30052:#4f9a00:#b07700:#0081f8:#c301fb:#009797:#cbc0e2:#725f95:#ff506e:#5cb200:#cc8a00:#4699ff:#d057ff:#00afaf:#f7f5fb"
 [layouts]
   [[default]]
     [[[window0]]]
@@ -23,5 +33,5 @@
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = custom
+      profile = regular
 [plugins]

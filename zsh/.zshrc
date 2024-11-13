@@ -116,3 +116,13 @@ source /opt/ros/humble/setup.zsh
 # argcomplete for ros2 & colcon
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
+
+# Launching tmux on terminal startup if :
+# - tmux is installed
+# - the shell is in interactive
+# - tmux doesnt try to run within itself
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+

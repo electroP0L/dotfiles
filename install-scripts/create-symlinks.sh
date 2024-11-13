@@ -13,13 +13,45 @@
 dotfiles_dir=~/dotfiles
 
 #==============
+# Check which softs are installed
+#==============
+terminator_installed=false
+tmux_installed=false
+
+if command -v terminator > /dev/null; then
+    terminator_installed=true
+else
+    echo "Warning: 'terminator' is not installed. Skipping related tasks."
+fi
+
+if command -v tmux > /dev/null; then
+    tmux_installed=true
+else
+    echo "Warning: 'tmux' is not installed. Skipping related tasks."
+fi
+
+#==============
 # Rename existing dot files and folders (append .old)
 #==============
-for name in ~/.bashrc ~/.zshrc ~/.tmux.conf; do
+for name in ~/.bashrc ~/.zshrc; do
     if [ -e "$name" ]; then
         mv "$name" "$name.old" 2>/dev/null
     fi
 done
+
+# Rename tmux config if tmux is installed
+if $tmux_installed; then
+    if [ -e ~/.tmux.conf ]; then
+        mv ~/.tmux.conf ~/.tmux.conf.old 2>/dev/null
+    fi
+fi
+
+# Rename terminator config if terminator is installed
+if $terminator_installed; then
+    if [ -e ~/.config/terminator/config ]; then
+        mv ~/.config/terminator/config ~/.config/terminator/config.old 2>/dev/null
+    fi
+fi
 
 #==============
 # Create symlinks in the home folder
@@ -27,4 +59,14 @@ done
 #==============
 ln -sf $dotfiles_dir/bash/.bashrc ~/.bashrc
 ln -sf $dotfiles_dir/zsh/.zshrc ~/.zshrc
-ln -sf $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
+
+# Create symlink for tmux config if tmux is installed
+if $tmux_installed; then
+    ln -sf $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
+fi
+
+# Create symlink for terminator config if terminator is installed
+if $terminator_installed; then
+    mkdir -p ~/.config/terminator  # Ensure the directory exists
+    ln -sf $dotfiles_dir/custom/terminator/config ~/.config/terminator/config
+fi
