@@ -84,7 +84,7 @@ hi TabLineFill term=bold cterm=bold ctermbg=0
 " Change status bar color to match the terminal
 hi StatusLine term=bold cterm=bold ctermbg=0
 " Change inactive status bar color to match the terminal
-hi StatusLineNC term=bold cterm=bold ctermbg=10
+hi StatusLineNC term=bold cterm=bold ctermbg=NONE
 
 " Change vertical split bar color to match the terminal
 hi Vertsplit cterm=NONE ctermbg=0
@@ -101,6 +101,12 @@ set mouse=a
 
 
 " PLUGINS ---------------------------------------------------------------- {{{
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.vim/plugged')
 
