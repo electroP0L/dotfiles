@@ -9,3 +9,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ls='ls --color'
+
+alias cl='clear'
+alias wssource='source install/setup.zsh'
