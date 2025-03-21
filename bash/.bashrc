@@ -117,7 +117,10 @@ if ! shopt -oq posix; then
 fi
 [ -r /home/pol/.byobu/prompt ] && . /home/pol/.byobu/prompt   #byobu-prompt#
 
-
+# CARLA :
+export UE4_ROOT=/media/proger/disk1/UnrealEngine_4.26
+export CARLA_ROOT=/media/proger/disk1/carla
+export PYTHONPATH=$PYTHONPATH:/media/proger/disk1/carla/PythonAPI/carla/dist/carla-0.9.15-py3.10-linux-x86_64.egg
 
 source /opt/ros/humble/setup.bash
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash

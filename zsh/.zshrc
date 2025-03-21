@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -113,9 +113,18 @@ fi
 
 # ROS2 sourcing :
 source /opt/ros/humble/setup.zsh
+
+# ROS2 domain id, in order to stay isolated from other teams
+export ROS_DOMAIN_ID=149
+
 # argcomplete for ros2 & colcon
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
+
+# CARLA : 
+export UE4_ROOT=/media/proger/disk1/UnrealEngine_4.26
+export CARLA_ROOT=/media/proger/disk1/carla
+export PYTHONPATH=$PYTHONPATH:/media/proger/disk1/carla/PythonAPI/carla/dist/carla-0.9.15-py3.10-linux-x86_64.egg
 
 # Launching tmux on terminal startup if :
 # - tmux is installed
