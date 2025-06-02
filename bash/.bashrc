@@ -122,6 +122,10 @@ fi
 source /opt/ros/humble/setup.bash
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
+# CARLA
+export UE4_ROOT=~/ASTRA_ROS2/UnrealEngine_4.26
+export CARLA_ROOT=~/ASTRA_ROS2/carla
+
 # export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/ardupilot_gazebo/build:$GZ_SIM_SYSTEM_PLUGIN_PATH
 # export GZ_SIM_RESOURCE_PATH=$HOME/ardupilot_gazebo/models:$HOME/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
 

@@ -117,6 +117,10 @@ source /opt/ros/humble/setup.zsh
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
 
+# CARLA
+export UE4_ROOT=~/ASTRA_ROS2/UnrealEngine_4.26
+export CARLA_ROOT=~/ASTRA_ROS2/carla
+
 # Launching tmux on terminal startup if :
 # - tmux is installed
 # - the shell is in interactive
